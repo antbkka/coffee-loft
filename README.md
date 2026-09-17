@@ -1,5 +1,7 @@
 # BLACK ROAST — Лофт кофейня
 
+🔗 **Демо:** [coffee-loft-eight.vercel.app](https://coffee-loft-eight.vercel.app/)
+
 Многостраничный сайт кофейни в стиле «лофт» на React + Vite + Tailwind CSS + React Router.
 
 ## Скриншоты
