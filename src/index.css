@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-loft-black text-loft-concrete font-body antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-wider;
+  }
+  ::selection {
+    @apply bg-loft-copper text-loft-black;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3 bg-loft-copper hover:bg-loft-amber text-loft-black font-semibold uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_30px_rgba(232,154,74,0.5)] active:scale-95;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3 border-2 border-loft-copper text-loft-copper hover:bg-loft-copper hover:text-loft-black font-semibold uppercase tracking-wider transition-all duration-300 active:scale-95;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2 text-loft-concrete hover:text-loft-copper transition-colors duration-300;
+  }
+  .container-loft {
+    @apply max-w-7xl mx-auto px-5 md:px-8;
+  }
+  .section {
+    @apply py-20 md:py-28;
+  }
+  .section-title {
+    @apply text-5xl md:text-7xl font-display text-loft-concrete mb-3 leading-none;
+  }
+  .section-subtitle {
+    @apply text-loft-copper uppercase tracking-[0.3em] text-sm md:text-base mb-4 font-medium;
+  }
+  .card {
+    @apply bg-loft-dark/80 backdrop-blur-sm border border-loft-steel hover:border-loft-copper transition-all duration-500;
+  }
+  .input-loft {
+    @apply w-full bg-loft-steel/60 border border-loft-gray focus:border-loft-copper px-4 py-3 text-loft-concrete placeholder-loft-smoke outline-none transition-colors duration-300;
+  }
+  .label-loft {
+    @apply block text-sm uppercase tracking-wider text-loft-smoke mb-2;
+  }
+}
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #b87333, #8b3a2e);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e89a4a;
+}
+
+/* Noise overlay for loft feel */
+.noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px #c9c5bd;
+  color: transparent;
+}
+
+.divider-copper {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #b87333, transparent);
+}
